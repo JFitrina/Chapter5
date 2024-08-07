@@ -1,17 +1,14 @@
-const mongoose = require('mongoose');//ประกาศตัวแปร productSchema
+const mongoose = require('mongoose');
 
-const userSchema = new mongoose.Schema({//ใส่ แอคทีบิว เพื่อสร้างdatabase
-    user_name: { type: String, required: true }, 
+const userschema = new mongoose.Schema(
+    {
+    username: { type: String, required: true },
     password: { type: String, required: true },
     name: { type: String, required: true },
-    role: { type: String, required: true },
-    
-},
-
-{timestamps: true, versionKey: false} 
+    role: { type: String, required: true }
+    },
+    {Timestamp : true, versionKey : false}
 );
-
-const user = mongoose.model('Product', userSchema); 
-
-
-module.exports = user
+const Users = mongoose.model('Users',userschema)
+module.exports = Users;
+// module.exports = mongoose.model('Users', users);
